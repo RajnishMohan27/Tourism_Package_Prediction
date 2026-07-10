@@ -1,0 +1,4 @@
+Model,Accuracy,Precision,Recall,F1 Score,ROC AUC,Best Parameters
+Gradient Boosting,0.9213075060532687,0.8983050847457628,0.6666666666666666,0.7653429602888087,0.9497798270675983,"{'classifier__learning_rate': 0.1, 'classifier__max_depth': 5, 'classifier__min_samples_split': 2, 'classifier__n_estimators': 200}"
+Decision Tree,0.8861985472154964,0.7044025157232704,0.7044025157232704,0.7044025157232704,0.8169688740535392,"{'classifier__criterion': 'gini', 'classifier__max_depth': None, 'classifier__min_samples_split': 2}"
+Random Forest,0.8983050847457628,0.9120879120879121,0.5220125786163522,0.664,0.9555788143664018,"{'classifier__max_depth': 20, 'classifier__min_samples_split': 2, 'classifier__n_estimators': 100}"
