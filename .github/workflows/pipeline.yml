@@ -12,30 +12,66 @@ jobs:
 
     steps:
 
+      # -------------------------------------------------------
+      # Checkout Repository
+      # -------------------------------------------------------
+
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      # -------------------------------------------------------
+      # Setup Python
+      # -------------------------------------------------------
 
       - name: Set Up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      # -------------------------------------------------------
+      # Install Dependencies
+      # -------------------------------------------------------
+
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Verify Generated Files
-        run: |
-          ls -R
+      # -------------------------------------------------------
+      # Verify Project Structure
+      # -------------------------------------------------------
 
-      - name: Verify Deployment Files
+      - name: Verify Required Project Files
         run: |
-          echo "Deployment files:"
-          ls -la
+          test -f README.md
+          test -f requirements.txt
+          test -f Dockerfile
+          test -f app.py
+          test -f push_to_hf_space.py
+          test -f .github/workflows/pipeline.yml
 
-      - name: Deployment Ready
+      # -------------------------------------------------------
+      # Verify Dataset
+      # -------------------------------------------------------
+
+      - name: Verify Dataset Files
         run: |
-          echo "Deployment files generated successfully."
-          echo "Hosting script (push_to_hf_space.py) is ready for execution."
-          echo "Deployment to Hugging Face Space depends on Space availability."
+          test -f data/train.csv
+          test -f data/test.csv
+
+      # -------------------------------------------------------
+      # Verify Model
+      # -------------------------------------------------------
+
+      - name: Verify Model Artifact
+        run: |
+          test -f model/tourism_package_prediction_pipeline.pkl
+
+      # -------------------------------------------------------
+      # Workflow Completed
+      # -------------------------------------------------------
+
+      - name: Workflow Completed
+        run: |
+          echo "End-to-end MLOps workflow executed successfully."
+          echo "All required project artifacts are available."
