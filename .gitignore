@@ -1,14 +1,31 @@
+# Python
 __pycache__/
-.ipynb_checkpoints/
-*.pyc
+*.py[cod]
 *.pyo
-.env
 
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment Variables
+.env
+.venv/
+venv/
+
+# MLflow
 mlruns/
+
+# Logs
 *.log
 
+# Operating System
 .DS_Store
 Thumbs.db
 
+# IDE
 .vscode/
 .idea/
+
+# Build Artifacts
+*.egg-info/
+dist/
+build/

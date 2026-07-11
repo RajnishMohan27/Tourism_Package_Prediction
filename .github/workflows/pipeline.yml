@@ -71,7 +71,7 @@ jobs:
       # Workflow Completed
       # -------------------------------------------------------
 
-      - name: Workflow Completed
-        run: |
-          echo "End-to-end MLOps workflow executed successfully."
-          echo "All required project artifacts are available."
+    - name: Workflow Completed
+      run: |
+        echo "✅ All required project artifacts verified successfully."
+        echo "✅ Project is ready for deployment."

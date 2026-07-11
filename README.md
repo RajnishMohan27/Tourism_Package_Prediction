@@ -31,9 +31,8 @@ The solution demonstrates the complete machine learning lifecycle including:
 
 ## Deployment Note
 
-The deployment artifacts (Dockerfile, Streamlit application, requirements.txt, and hosting script) have been implemented as part of this project.
-At the time of submission, Hugging Face Docker Spaces require a paid plan, preventing deployment to a live Space using a free account.
-The GitHub Actions workflow validates the deployment artifacts successfully, and the hosting script is ready to execute once a compatible Hugging Face Space is available.
+The application has been successfully deployed on Hugging Face Spaces.
+The trained model is loaded directly from the Hugging Face Model Hub, and deployment artifacts are managed through GitHub Actions.
 
 ---
 
@@ -51,7 +50,7 @@ https://huggingface.co/RajnishMohan/tourism-package-prediction-model
 
 ## Hugging Face Space
 
-https://huggingface.co/spaces/RajnishMohan/tourism-package-prediction-app
+https://huggingface.co/spaces/RajnishMohan/tourism-package-prediction
 
 ---
 

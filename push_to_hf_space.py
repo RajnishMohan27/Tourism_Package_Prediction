@@ -26,7 +26,6 @@ else:
 # Hugging Face Space
 # ------------------------------------------------------------
 
-#HF_SPACE_REPO = "RajnishMohan/tourism-package-prediction-app"
 HF_SPACE_REPO = "RajnishMohan/tourism-package-prediction"
 
 FILES_TO_UPLOAD = [
