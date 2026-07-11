@@ -26,17 +26,17 @@ else:
 # Hugging Face Space
 # ------------------------------------------------------------
 
-HF_SPACE_REPO = "RajnishMohan/tourism-package-prediction-app"
+#HF_SPACE_REPO = "RajnishMohan/tourism-package-prediction-app"
+HF_SPACE_REPO = "RajnishMohan/tourism-package-prediction"
 
 FILES_TO_UPLOAD = [
     "app.py",
     "requirements.txt",
-    "Dockerfile",
-    "README.md"
+    "Dockerfile"
 ]
 
 # ------------------------------------------------------------
-# Upload Files
+# Upload Deployment Files
 # ------------------------------------------------------------
 
 for file_name in FILES_TO_UPLOAD:
@@ -49,5 +49,18 @@ for file_name in FILES_TO_UPLOAD:
         repo_id=HF_SPACE_REPO,
         repo_type="space"
     )
+
+# ------------------------------------------------------------
+# Upload Hugging Face README
+# ------------------------------------------------------------
+
+print("Uploading README_HF.md as README.md...")
+
+upload_file(
+    path_or_fileobj="README_HF.md",
+    path_in_repo="README.md",
+    repo_id=HF_SPACE_REPO,
+    repo_type="space"
+)
 
 print("Deployment completed successfully.")
